@@ -68,7 +68,11 @@ profiles = %w[
   https://www.linkedin.com/in/lily-yang-04105425/
 ]
 
-driver = Selenium::WebDriver.for :chrome
+if ARGV[0] == "-f" || ARGV[0] == "--firefox"
+  driver = Selenium::WebDriver.for :firefox
+else
+  driver = Selenium::WebDriver.for :chrome
+end
 
 puts "please enter your linkedin email: "
 user_email = gets.chomp
@@ -79,7 +83,7 @@ response = gets.chomp
 send_connect = response.include?("y")
 puts "Endorse-o-matic 3000 is starting now. This proccess should take about 5 minutes :)"
 
-# If you are getting a timeout error you can try increasing timout value 
+# If you are getting a timeout error you can try increasing timout value
 wait = Selenium::WebDriver::Wait.new(timeout: 3)
 
 driver.get "https://www.linkedin.com/"
@@ -105,19 +109,19 @@ profiles.each do |profile|
   (0...5000).step(100) do |i|
     driver.execute_script("scroll(0,#{i})")
   end
-  
+
   begin
-    wait.until { driver.find_element(:class, "pv-skills-section__additional-skills") } 
+    wait.until { driver.find_element(:class, "pv-skills-section__additional-skills") }
   rescue => exception
     name = /[\(\d\)\s]?([a-zA-Z ]+)/.match(driver.title)[1]
-    puts "Can't find skills to endorse for #{name}" 
+    puts "Can't find skills to endorse for #{name}"
     next
   end
 
   begin
     connect_btn = driver.find_element(:class, "pv-s-profile-actions--connect")
   rescue => exception
-    connect_btn = nil    
+    connect_btn = nil
   end
   name = /[\(\d\)\s]?([a-zA-Z ]+)/.match(driver.title)[1]
   if connect_btn
