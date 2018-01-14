@@ -1,5 +1,7 @@
 require 'rubygems'
 require 'selenium-webdriver'
+require 'io/console'
+
 profiles = %w[
 
   https://www.linkedin.com/in/aaron-strauli-1a6883a2/
@@ -71,7 +73,7 @@ driver = Selenium::WebDriver.for :chrome
 puts "please enter your linkedin email: "
 user_email = gets.chomp
 puts "please enter your linked in password (don't worry it wont be saved anywhere): "
-user_password = gets.chomp
+user_password = STDIN.noecho(&:gets).chomp
 puts "would you like to send connect invites users you are not yet connected with? (y/n): "
 response = gets.chomp
 send_connect = response.include?("y")

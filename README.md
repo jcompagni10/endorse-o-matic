@@ -9,5 +9,6 @@ Welcome to the Endorse-O-Matic a tool to simplify the LinkedIn endorsing procces
 6. Sit back and enjoy as the EOM goes to work!
 
 If you are getting errors make sure you have installed the latest version of chrome.
+
 If you are on a slow internet connection you may have to adjust the timeout interval on line 81
 
