@@ -139,4 +139,5 @@ profiles.each do |profile|
   driver.execute_script(endorse_js)
   puts "done endorsing #{name}"
 end
+  puts "ALL DONE :)"
 driver.quit
