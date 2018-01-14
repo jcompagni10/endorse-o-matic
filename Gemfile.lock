@@ -5,14 +5,10 @@ GEM
       io-like (~> 0.3.0)
     childprocess (0.8.0)
       ffi (~> 1.0, >= 1.0.11)
-    chromedriver-helper (1.1.0)
-      archive-zip (~> 0.7.0)
-      nokogiri (~> 1.6)
     ffi (1.9.18)
+    geckodriver-helper (0.0.4)
+      archive-zip (~> 0.7.0)
     io-like (0.3.0)
-    mini_portile2 (2.3.0)
-    nokogiri (1.8.1)
-      mini_portile2 (~> 2.3.0)
     rubyzip (1.2.1)
     selenium-webdriver (3.8.0)
       childprocess (~> 0.5)
@@ -22,7 +18,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  chromedriver-helper
+  geckodriver-helper
   selenium-webdriver
 
 BUNDLED WITH
