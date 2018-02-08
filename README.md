@@ -1,5 +1,5 @@
 # Endorse-O-Matic
-Welcome to the Endorse-O-Matic a tool to simplify the LinkedIn endorsing proccess. EOM uses the selenium-webdriver to simulate real interaction with linkedin.
+Welcome to the Endorse-O-Matic a tool to simplify the LinkedIn endorsing proccess. It allows users to specify a batch of users whose skills they would like to endorse. The end user can quickly make those endorsements without having to spend tedious time clicking through individual profiles of their colleagues. EOM uses the selenium-webdriver to simulate real interaction with linkedin.
 ## Usage
 1. clone this repository
 2. bundle
